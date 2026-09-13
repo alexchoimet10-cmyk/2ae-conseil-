@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — 2AE Conseil</title>
+<meta name="description" content="Contactez 2AE Conseil à Haute-Goulaine ou Saint-Julien-de-Concelles (44). Téléphone, e-mail, formulaire de contact.">
+<link rel="canonical" href="https://2ae-conseil-refonte.netlify.app/contact.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="cookie-banner" id="cookieBanner" hidden>
+  <div class="cookie-banner__overlay"></div>
+  <div class="cookie-banner__modal">
+    <span class="cookie-banner__icon" aria-hidden="true">🍪</span>
+    <h3>Votre vie privée</h3>
+    <p>Ce site utilise des cookies uniquement techniques. <a href="politique-confidentialite.html">En savoir plus</a></p>
+    <div class="cookie-banner__actions">
+      <button type="button" class="btn btn--ghost btn--sm" id="cookieRefuse">Refuser</button>
+      <button type="button" class="btn btn--primary btn--sm" id="cookieAccept">Accepter et fermer</button>
+    </div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="logo">
+      <svg width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" rx="14" fill="#B9202E"/><text x="32" y="40" font-family="Georgia, serif" font-size="24" font-weight="700" fill="white" text-anchor="middle">2AE</text></svg>
+      <span>2AE Conseil</span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="index.html">Accueil</a>
+      <a href="cabinet.html">Le cabinet</a>
+      <a href="accompagnements.html">Accompagnements</a>
+      <a href="outils.html">Nos outils</a>
+      <a href="secteurs.html">Secteurs</a>
+      <a href="actualites.html">Actualités</a>
+      <a href="recrutement.html">Recrutement</a>
+    </nav>
+    <div class="nav__actions">
+      <a href="contact.html" class="btn btn--primary btn--sm">Nous contacter</a>
+      <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="breadcrumb"><a href="index.html">Accueil</a> / Contact</span>
+      <span class="pill">Contact</span>
+      <h1>Vous souhaitez nous rencontrer ?</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="tabpanel-grid">
+        <div>
+          <span class="eyebrow">Vous souhaitez nous écrire ?</span>
+          <h2>Envoyez-nous un message</h2>
+          <form class="form-card" action="#" method="post">
+            <div class="form-grid">
+              <div class="full"><label for="cSociete">Société</label><input type="text" id="cSociete" name="societe"></div>
+              <div><label for="cNom">Nom Prénom</label><input type="text" id="cNom" name="nom" required></div>
+              <div><label for="cTel">Téléphone</label><input type="tel" id="cTel" name="telephone"></div>
+              <div class="full"><label for="cEmail">E-mail</label><input type="email" id="cEmail" name="email" required></div>
+              <div class="full">
+                <label for="contactSubject">Sujet</label>
+                <select id="contactSubject" name="sujet">
+                  <option value="">Choisir un sujet…</option>
+                  <option value="creation">Création d'entreprise</option>
+                  <option value="dirigeant">Accompagnement du dirigeant</option>
+                  <option value="pilotage">Pilotage d'entreprise</option>
+                  <option value="gestion">Gestion au quotidien</option>
+                  <option value="rh">Ressources humaines</option>
+                  <option value="numerique">Stratégie numérique</option>
+                  <option value="agri">Secteur agricole</option>
+                  <option value="bati">Secteur bâtiment</option>
+                  <option value="tpe">TPE / PME</option>
+                  <option value="autre">Autre demande</option>
+                </select>
+              </div>
+              <div class="full"><label for="cMessage">Message</label><textarea id="cMessage" name="message" required></textarea></div>
+              <div class="full checkline"><input type="checkbox" id="cRgpd" required><label for="cRgpd" style="margin:0">J'accepte la politique de confidentialité.</label></div>
+              <div class="full"><button type="submit" class="btn btn--primary btn--block">Envoyer le message</button></div>
+            </div>
+          </form>
+        </div>
+        <div>
+          <span class="eyebrow">Nos coordonnées</span>
+          <h2>Deux bureaux à votre écoute</h2>
+          <div class="info-cards">
+            <div class="info-card">
+              <h4>Siège — Haute-Goulaine</h4>
+              <p>114 rue Georges Charpak<br>PA de la Lande St Martin<br>44115 Haute-Goulaine</p>
+              <p style="margin-top:8px"><a href="https://www.google.com/maps/place/Cabinet+expertise+comptable+-+2AE+Conseil/@47.1845871,-1.421518,17z" target="_blank" rel="noopener">Voir sur la carte →</a></p>
+            </div>
+            <div class="info-card">
+              <h4>Saint-Julien-de-Concelles</h4>
+              <p>33 rue de la Gare<br>44450 Saint-Julien-de-Concelles</p>
+              <p style="margin-top:8px"><a href="https://goo.gl/maps/tPpFG3wTzYTTRbuU7" target="_blank" rel="noopener">Voir sur la carte →</a></p>
+            </div>
+            <div class="info-card">
+              <h4>Téléphone</h4>
+              <p><a href="tel:+33240365745">02 40 36 57 45</a></p>
+            </div>
+            <div class="info-card">
+              <h4>E-mail</h4>
+              <p><a href="mailto:contact@2aeconseil.fr">contact@2aeconseil.fr</a></p>
+            </div>
+            <div class="info-card" style="grid-column:1/-1">
+              <h4>Horaires d'ouverture</h4>
+              <p>Du lundi au vendredi de 8h30 à 12h30 et de 13h30 à 17h30</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <a href="index.html" class="logo"><span>2AE Conseil</span></a>
+        <p class="footer__tagline">Cabinet d'expertise comptable indépendant depuis 1997. L'essentiel en toute sérénité.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Le cabinet</h4>
+        <ul><li><a href="cabinet.html">Le cabinet</a></li><li><a href="accompagnements.html">Nos accompagnements</a></li><li><a href="outils.html">Nos outils</a></li><li><a href="secteurs.html">Nos secteurs</a></li></ul>
+      </div>
+      <div class="footer__col">
+        <h4>Infos</h4>
+        <ul><li><a href="actualites.html">Actualités</a></li><li><a href="recrutement.html">Recrutement</a></li><li><a href="contact.html">Contact</a></li><li><a href="tel:+33240365745">02 40 36 57 45</a></li></ul>
+      </div>
+      <div class="footer__col">
+        <h4>Légal</h4>
+        <ul><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="politique-confidentialite.html">Confidentialité</a></li><li><button type="button" class="footer__cookie-link" id="cookieManage">Gérer les cookies</button></li></ul>
+      </div>
+    </div>
+    <div class="footer__inner">
+      <p>© <span id="year"></span> 2AE Conseil. Tous droits réservés.</p>
+      <div class="footer__social">
+        <a href="https://www.facebook.com/2AE-conseil-264333990307440/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.linkedin.com/company/2ae-conseil/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://twitter.com/2aeconseil" target="_blank" rel="noopener">Twitter/X</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nos outils — 2AE Conseil</title>
+<meta name="description" content="Gestion (devis, factures, achats, caisse, banque, notes de frais), comptabilité en ligne ISACOMPTA, paie en ligne SILAE, dématérialisation MyCompanyFiles et Ami compta.">
+<link rel="canonical" href="https://2ae-conseil-refonte.netlify.app/outils.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="cookie-banner" id="cookieBanner" hidden>
+  <div class="cookie-banner__overlay"></div>
+  <div class="cookie-banner__modal">
+    <span class="cookie-banner__icon" aria-hidden="true">🍪</span>
+    <h3>Votre vie privée</h3>
+    <p>Ce site utilise des cookies uniquement techniques. <a href="politique-confidentialite.html">En savoir plus</a></p>
+    <div class="cookie-banner__actions">
+      <button type="button" class="btn btn--ghost btn--sm" id="cookieRefuse">Refuser</button>
+      <button type="button" class="btn btn--primary btn--sm" id="cookieAccept">Accepter et fermer</button>
+    </div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="logo">
+      <svg width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" rx="14" fill="#B9202E"/><text x="32" y="40" font-family="Georgia, serif" font-size="24" font-weight="700" fill="white" text-anchor="middle">2AE</text></svg>
+      <span>2AE Conseil</span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="index.html">Accueil</a>
+      <a href="cabinet.html">Le cabinet</a>
+      <a href="accompagnements.html">Accompagnements</a>
+      <a href="outils.html" class="is-active">Nos outils</a>
+      <a href="secteurs.html">Secteurs</a>
+      <a href="actualites.html">Actualités</a>
+      <a href="recrutement.html">Recrutement</a>
+    </nav>
+    <div class="nav__actions">
+      <a href="contact.html" class="btn btn--primary btn--sm">Nous contacter</a>
+      <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="breadcrumb"><a href="index.html">Accueil</a> / Nos outils</span>
+      <span class="pill">Nos outils</span>
+      <h1>Accédez rapidement et simplement à toutes les informations liées à votre entreprise.</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" data-tabs>
+
+      <div class="tabbar">
+        <button data-tab-btn="gestion">🗂️ Gestion</button>
+        <button data-tab-btn="comptabilite">📈 Comptabilité</button>
+        <button data-tab-btn="paie">💳 Paie en ligne</button>
+        <button data-tab-btn="documents">📄 Dématérialisation</button>
+      </div>
+
+      <div data-tab-panel="gestion" id="gestion">
+        <h2 class="tabpanel-title">Gestion</h2>
+        <p class="tabpanel-lead">Découvrez nos solutions pour la gestion en ligne de votre entreprise.</p>
+        <div class="card-grid card-grid--3">
+          <div class="card"><h3>Facturation</h3><p>Éditez vos devis et factures, suivez vos règlements, analysez vos résultats, gérez votre fichier client.</p></div>
+          <div class="card"><h3>Achats</h3><p>Pilotage de votre trésorerie, analyse de vos dépenses, préparation des virements, process dématérialisés.</p></div>
+          <div class="card"><h3>Caisse</h3><p>Suivi des chiffres de votre activité, traçabilité des dépenses et dépôts, sécurisation du cadrage de caisse.</p></div>
+          <div class="card"><h3>Banque</h3><p>Récupération et affectation automatique de vos flux bancaires, interconnexion avec les autres modules.</p></div>
+          <div class="card"><h3>Note de frais</h3><p>Cadrage des notes de frais, pièces dématérialisées (photo, scan, OCR), gestion de la TVA, transfert des écritures.</p></div>
+        </div>
+        <p style="margin-top:20px">Comment ça marche ? Demandez vos codes d'accès à notre cabinet — outil 100% web, disponible 24/7 — paramétrage et installation par notre cabinet — assistance téléphonique.</p>
+      </div>
+
+      <div data-tab-panel="comptabilite" id="comptabilite" hidden>
+        <h2 class="tabpanel-title">Comptabilité — ISACOMPTA</h2>
+        <p class="tabpanel-lead">Partagez la tenue, optimisez la gestion de votre entreprise et restez connecté avec notre cabinet.</p>
+        <div class="tabpanel-grid">
+          <div>
+            <h3>Compta en ligne</h3>
+            <ul class="tabpanel-list">
+              <li>Tenue de votre comptabilité</li>
+              <li>Saisie partagée</li>
+              <li>Suivi des échéanciers</li>
+              <li>Déclaration de TVA</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Suivi de vos comptes</h3>
+            <ul class="tabpanel-list">
+              <li>Consultation de vos principaux indicateurs</li>
+              <li>Accès intuitif et détaillé</li>
+              <li>Suivi de vos encours (clients, fournisseurs, trésorerie)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div data-tab-panel="paie" id="paie" hidden>
+        <h2 class="tabpanel-title">Paie en ligne — SILAE</h2>
+        <p class="tabpanel-lead">Transmettez vos variables de paie, accédez aux fiches de paie et gérez les demandes de congés de vos salariés.</p>
+        <ul class="tabpanel-list">
+          <li>Saisie des éléments variables de paie</li>
+          <li>Accès sécurisé à vos bulletins, déclarations, écritures comptables</li>
+          <li>Suivi individualisé (gestion des droits d'accès)</li>
+          <li>Gestion complète des congés payés</li>
+          <li>Extraction : tableau des charges, registre du personnel, récapitulatif de paie, coûts salariaux</li>
+        </ul>
+      </div>
+
+      <div data-tab-panel="documents" id="documents" hidden>
+        <h2 class="tabpanel-title">Dématérialisation des documents</h2>
+        <p class="tabpanel-lead">Transmission sécurisée, consultation, impression ou extraction de vos documents.</p>
+        <div class="card-grid card-grid--3">
+          <div class="card"><h3>MyCompanyFiles</h3><p>Extranet et application mobile, dépôt identifié et horodaté, accès sécurisé conforme RGPD, interconnexion avec SILAE, ISACOMPTA et les autres outils du cabinet.</p></div>
+          <div class="card"><h3>Ami compta</h3><p>Logiciel d'intelligence artificielle qui produit des écritures comptables automatisées, facilite la collecte de vos factures via une adresse mail dédiée.</p></div>
+          <div class="card"><h3>Demat'Box / Demat'Go / Demat'Collect</h3><p>Transmission de vos documents papier en toute sécurité (au cabinet, en déplacement, ou automatiquement depuis vos espaces fournisseurs). Solution plug & play, échanges sécurisés, hotline dédiée.</p></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container cta-banner__inner">
+      <div><h2>Besoin de plus de renseignements ?</h2><p>Notre équipe est là pour vous répondre.</p></div>
+      <a href="contact.html" class="btn btn--light">Contactez-nous</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <a href="index.html" class="logo"><span>2AE Conseil</span></a>
+        <p class="footer__tagline">Cabinet d'expertise comptable indépendant depuis 1997. L'essentiel en toute sérénité.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Le cabinet</h4>
+        <ul><li><a href="cabinet.html">Le cabinet</a></li><li><a href="accompagnements.html">Nos accompagnements</a></li><li><a href="outils.html">Nos outils</a></li><li><a href="secteurs.html">Nos secteurs</a></li></ul>
+      </div>
+      <div class="footer__col">
+        <h4>Infos</h4>
+        <ul><li><a href="actualites.html">Actualités</a></li><li><a href="recrutement.html">Recrutement</a></li><li><a href="contact.html">Contact</a></li><li><a href="tel:+33240365745">02 40 36 57 45</a></li></ul>
+      </div>
+      <div class="footer__col">
+        <h4>Légal</h4>
+        <ul><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="politique-confidentialite.html">Confidentialité</a></li><li><button type="button" class="footer__cookie-link" id="cookieManage">Gérer les cookies</button></li></ul>
+      </div>
+    </div>
+    <div class="footer__inner">
+      <p>© <span id="year"></span> 2AE Conseil. Tous droits réservés.</p>
+      <div class="footer__social">
+        <a href="https://www.facebook.com/2AE-conseil-264333990307440/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.linkedin.com/company/2ae-conseil/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://twitter.com/2aeconseil" target="_blank" rel="noopener">Twitter/X</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
