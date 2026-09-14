@@ -85,4 +85,42 @@
       if (opt) subjectSelect.value = sujet;
     }
   }
+
+  // ---- Téléchargement des guides PDF (page Guides) ----
+  // Les PDF sont stockés encodés en base64 (guides/<nom>.b64) pour rester de simples
+  // fichiers texte sur GitHub Pages. On les récupère, on les décode, puis on déclenche
+  // le téléchargement via un Blob.
+  window.downloadGuide = function (el, filename) {
+    var base = filename.replace(/\.pdf$/i, "");
+    var originalText = el ? el.textContent : "";
+    if (el) el.textContent = "Préparation du téléchargement…";
+    fetch("guides/" + base + ".b64")
+      .then(function (r) {
+        if (!r.ok) throw new Error("fetch failed");
+        return r.text();
+      })
+      .then(function (b64) {
+        b64 = b64.trim();
+        var byteChars = atob(b64);
+        var byteNumbers = new Array(byteChars.length);
+        for (var i = 0; i < byteChars.length; i++) byteNumbers[i] = byteChars.charCodeAt(i);
+        var byteArray = new Uint8Array(byteNumbers);
+        var blob = new Blob([byteArray], { type: "application/pdf" });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement("a");
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+      })
+      .catch(function () {
+        alert("Le téléchargement a échoué. Merci de réessayer ou de nous contacter.");
+      })
+      .then(function () {
+        if (el) el.textContent = originalText;
+      });
+    return false;
+  };
 })();
