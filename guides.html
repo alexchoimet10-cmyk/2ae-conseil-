@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guides pratiques — 2AE Conseil</title>
+<meta name="description" content="Guides pratiques gratuits pour les chefs d'entreprise : création, fiscalité, social, trésorerie, transmission.">
+<link rel="canonical" href="https://alexchoimet10-cmyk.github.io/2ae-conseil-/guides.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="cookie-banner" id="cookieBanner" hidden>
+  <div class="cookie-banner__overlay"></div>
+  <div class="cookie-banner__modal">
+    <h3>Votre vie privée</h3>
+    <p>Ce site utilise des cookies uniquement techniques. <a href="politique-confidentialite.html">En savoir plus</a></p>
+    <div class="cookie-banner__actions">
+      <button type="button" class="btn btn--ghost btn--sm" id="cookieRefuse">Refuser</button>
+      <button type="button" class="btn btn--primary btn--sm" id="cookieAccept">Accepter et fermer</button>
+    </div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="logo">
+      <span class="logo__badge"><img src="https://2ae-conseil.com/app/uploads/sites/388/2022/04/cropped-Logo-header-blanc-4.png" alt="2AE Conseil"></span>
+      <span>2AE Conseil</span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="index.html">Accueil</a>
+      <a href="cabinet.html">Le cabinet</a>
+      <a href="accompagnements.html">Accompagnements</a>
+      <a href="outils.html">Nos outils</a>
+      <a href="secteurs.html">Secteurs</a>
+      <a href="guides.html" class="is-active">Guides</a>
+      <a href="actualites.html">Actualités</a>
+      <a href="recrutement.html">Recrutement</a>
+    </nav>
+    <div class="nav__actions">
+      <a href="contact.html" class="btn btn--primary btn--sm">Nous contacter</a>
+      <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="breadcrumb"><a href="index.html">Accueil</a> / Guides</span>
+      <span class="pill">Ressources gratuites</span>
+      <h1>Des guides pratiques pour les chefs d'entreprise.</h1>
+      <p>Des repères clairs, rédigés par nos experts, pour avancer sereinement sur les grandes étapes de la vie de votre entreprise.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="filter-pills" data-filter-group>
+        <button type="button" class="filter-pill is-active" data-filter-btn="tous">Tous</button>
+        <button type="button" class="filter-pill" data-filter-btn="creation">Création</button>
+        <button type="button" class="filter-pill" data-filter-btn="fiscal">Fiscal</button>
+        <button type="button" class="filter-pill" data-filter-btn="social">Social</button>
+        <button type="button" class="filter-pill" data-filter-btn="tresorerie">Trésorerie</button>
+        <button type="button" class="filter-pill" data-filter-btn="transmission">Transmission</button>
+      </div>
+
+      <div class="guide-grid">
+
+        <div class="guide-card" data-filter-item data-category="creation">
+          <span class="article-tag">Création</span>
+          <div class="guide-card__meta">12 pages · guide PDF</div>
+          <h3>Bien choisir son statut juridique</h3>
+          <p>Entreprise individuelle, EURL, SASU, SARL… les critères concrets pour choisir la structure adaptée à votre projet, votre protection sociale et votre fiscalité.</p>
+          <a href="contact.html?sujet=creation" class="guide-card__link">Télécharger gratuitement →</a>
+        </div>
+
+        <div class="guide-card" data-filter-item data-category="creation">
+          <span class="article-tag">Création</span>
+          <div class="guide-card__meta">8 pages · guide PDF</div>
+          <h3>Le business plan étape par étape</h3>
+          <p>Construire un prévisionnel financier crédible, présenter son projet à un banquier ou un investisseur, éviter les erreurs les plus fréquentes.</p>
+          <a href="contact.html?sujet=creation" class="guide-card__link">Télécharger gratuitement →</a>
+        </div>
+
+        <div class="guide-card" data-filter-item data-category="fiscal">
+          <span class="article-tag">Fiscal</span>
+          <div class="guide-card__meta">10 pages · guide PDF</div>
+          <h3>Optimiser la fiscalité de votre entreprise</h3>
+          <p>Les leviers légaux à connaître pour maîtriser l'imposition de votre société tout au long de l'année, sans attendre la clôture de l'exercice.</p>
+          <a href="contact.html?sujet=pilotage" class="guide-card__link">Télécharger gratuitement →</a>
+        </div>
+
+        <div class="guide-card" data-filter-item data-category="fiscal">
+          <span class="article-tag">Fiscal</span>
+          <div class="guide-card__meta">6 pages · guide PDF</div>
+          <h3>TVA : les règles essentielles</h3>
+          <p>Régimes, seuils, taux applicables et obligations déclaratives : un mémo pratique pour ne rien laisser passer.</p>
+          <a href="contact.html?sujet=gestion" class="guide-card__link">Télécharger gratuitement →</a>
+        </div>
+
+        <div class="guide-card" data-filter-item data-category="social">
+          <span class="article-tag">Social</span>
+          <div class="guide-card__meta">14 pages · guide PDF</div>
+          <h3>Recruter votre premier salarié</h3>
+          <p>Contrat, déclarations, paie, obligations de l'employeur : le parcours complet pour recruter en toute sérénité.</p>
+          <a href="contact.html?sujet=rh" class="guide-card__link">Télécharger gratuitement →</a>
+        </div>
+
+        <div class="guide-card" data-filter-item data-category="social">
+          <span class="article-tag">Social</span>
+          <div class="guide-card__meta">9 pages · guide PDF</div>
+          <h3>Statut du dirigeant : salarié ou TNS ?</h3>
+          <p>Comparatif des régimes de protection sociale du dirigeant selon la forme juridique choisie, pour arbitrer en connaissance de cause.</p>
+          <a href="contact.html?sujet=dirigeant" class="guide-card__link">Télécharger gratuitement →</a>
+        </div>
+
+        <div class="guide-card" data-filter-item data-category="tresorerie">
+          <span class="article-tag">Trésorerie</span>
+          <div class="guide-card__meta">7 pages · guide PDF</div>
+          <h3>Construire son tableau de bord de trésorerie</h3>
+          <p>Les indicateurs à suivre chaque mois pour anticiper les tensions de trésorerie et piloter votre activité avec visibilité.</p>
+          <a href="contact.html?sujet=pilotage" class="guide-card__link">Télécharger gratuitement →</a>
+        </div>
+
+        <div class="guide-card" data-filter-item data-category="tresorerie">
+          <span class="article-tag">Trésorerie</span>
+          <div class="guide-card__meta">8 pages · guide PDF</div>
+          <h3>Financer un besoin de trésorerie court terme</h3>
+          <p>Panorama des solutions de financement court terme (affacturage, découvert autorisé, avance sur subvention…) et leurs conditions d'accès.</p>
+          <a href="contact.html?sujet=pilotage" class="guide-card__link">Télécharger gratuitement →</a>
+        </div>
+
+        <div class="guide-card" data-filter-item data-category="transmission">
+          <span class="article-tag">Transmission</span>
+          <div class="guide-card__meta">16 pages · guide PDF</div>
+          <h3>Préparer la transmission de son entreprise</h3>
+          <p>Les étapes clés pour anticiper une cession ou une transmission familiale : valorisation, fiscalité, accompagnement du repreneur.</p>
+          <a href="contact.html?sujet=dirigeant" class="guide-card__link">Télécharger gratuitement →</a>
+        </div>
+
+      </div>
+
+      <div class="tabpanel-cta" style="margin-top:40px">
+        <p><strong>Vous ne trouvez pas le guide qu'il vous faut ?</strong> Nos équipes se tiennent à votre disposition pour répondre à toute question spécifique à votre situation.</p>
+        <a href="contact.html" class="btn btn--primary btn--sm">Nous contacter</a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <a href="index.html" class="logo"><span>2AE Conseil</span></a>
+        <p class="footer__tagline">Cabinet d'expertise comptable indépendant depuis 1997. L'essentiel en toute sérénité.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Le cabinet</h4>
+        <ul><li><a href="cabinet.html">Le cabinet</a></li><li><a href="accompagnements.html">Nos accompagnements</a></li><li><a href="outils.html">Nos outils</a></li><li><a href="secteurs.html">Nos secteurs</a></li></ul>
+      </div>
+      <div class="footer__col">
+        <h4>Infos</h4>
+        <ul><li><a href="guides.html">Guides</a></li><li><a href="actualites.html">Actualités</a></li><li><a href="recrutement.html">Recrutement</a></li><li><a href="contact.html">Contact</a></li><li><a href="tel:+33240365745">02 40 36 57 45</a></li></ul>
+      </div>
+      <div class="footer__col">
+        <h4>Légal</h4>
+        <ul><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="politique-confidentialite.html">Confidentialité</a></li><li><button type="button" class="footer__cookie-link" id="cookieManage">Gérer les cookies</button></li></ul>
+      </div>
+    </div>
+    <div class="footer__inner">
+      <p>© <span id="year"></span> 2AE Conseil. Tous droits réservés.</p>
+      <div class="footer__social">
+        <a href="https://www.facebook.com/2AE-conseil-264333990307440/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.linkedin.com/company/2ae-conseil/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://twitter.com/2aeconseil" target="_blank" rel="noopener">Twitter/X</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
