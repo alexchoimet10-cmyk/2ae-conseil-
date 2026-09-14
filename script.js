@@ -26,9 +26,17 @@
       panels.forEach(function (p) { p.hidden = p.getAttribute("data-tab-panel") !== id; });
     }
     btns.forEach(function (b) {
-      b.addEventListener("click", function () { activate(b.getAttribute("data-tab-btn")); });
+      b.addEventListener("click", function () {
+        activate(b.getAttribute("data-tab-btn"));
+        history.replaceState(null, "", "#" + b.getAttribute("data-tab-btn"));
+      });
     });
-    if (btns.length) activate(btns[0].getAttribute("data-tab-btn"));
+    // Ouvre directement le bon onglet si l'URL contient une ancre (#creation, #dirigeant...)
+    // -> utile pour les liens entrants et les redirections depuis l'ancien site
+    var hashId = window.location.hash ? window.location.hash.slice(1) : "";
+    var hashBtn = hashId ? group.querySelector('[data-tab-btn="' + hashId + '"]') : null;
+    if (btns.length) activate(hashBtn ? hashId : btns[0].getAttribute("data-tab-btn"));
+    if (hashBtn) hashBtn.scrollIntoView({ block: "start", behavior: "instant" });
   });
 
   // ---- Filtres par catégorie (page Guides) ----
