@@ -5,6 +5,17 @@
   var yearEls = document.querySelectorAll("#year");
   yearEls.forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
+  // ---- Favicon ----
+  // Injecté en JS pour garantir sa présence sur toutes les pages sans dupliquer
+  // la balise <link> dans chacune d'elles.
+  if (!document.querySelector('link[rel="icon"]')) {
+    var favicon = document.createElement("link");
+    favicon.rel = "icon";
+    favicon.type = "image/png";
+    favicon.href = "img/favicon.png";
+    document.head.appendChild(favicon);
+  }
+
   // Burger mobile nav
   var burger = document.getElementById("burger");
   var navLinks = document.getElementById("navLinks");
@@ -68,11 +79,47 @@
   function setCookieChoice(v) {
     try { localStorage.setItem("2ae_cookie_choice", v); } catch (e) {}
   }
+
+  // ---- Mesure d'audience (Google Analytics 4) ----
+  // Chargée uniquement si l'utilisateur a accepté les cookies (RGPD).
+  // ID de mesure PROVISOIRE : à remplacer par le véritable identifiant GA4
+  // du client une fois le nom de domaine définitif en place, puis à activer
+  // en retirant la vérification "XXXXXXXXXX" ci-dessous.
+  var GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
+  function loadAnalytics() {
+    if (window.__gaLoaded || GA_MEASUREMENT_ID.indexOf("XXXXXXXXXX") !== -1) return;
+    window.__gaLoaded = true;
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_MEASUREMENT_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag("js", new Date());
+    gtag("config", GA_MEASUREMENT_ID, { anonymize_ip: true });
+  }
+  if (getCookieChoice() === "accepted") loadAnalytics();
+
   if (cookieBanner) {
     if (!getCookieChoice()) cookieBanner.hidden = false;
-    if (cookieAccept) cookieAccept.addEventListener("click", function () { setCookieChoice("accepted"); cookieBanner.hidden = true; });
+    if (cookieAccept) cookieAccept.addEventListener("click", function () { setCookieChoice("accepted"); cookieBanner.hidden = true; loadAnalytics(); });
     if (cookieRefuse) cookieRefuse.addEventListener("click", function () { setCookieChoice("refused"); cookieBanner.hidden = true; });
     if (cookieManage) cookieManage.addEventListener("click", function () { cookieBanner.hidden = false; });
+  }
+
+  // ---- Anti-spam (honeypot) sur le formulaire de contact ----
+  // Champ invisible que seuls les robots remplissent : si rempli, on bloque
+  // silencieusement l'envoi.
+  var contactForm = document.querySelector(".form-card");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      var trap = contactForm.querySelector('input[name="site_web"]');
+      if (trap && trap.value) {
+        e.preventDefault();
+        return false;
+      }
+    });
   }
 
   // ---- Présélection du sujet sur le formulaire de contact via ?sujet= ----
