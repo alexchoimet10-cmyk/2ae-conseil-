@@ -65,6 +65,10 @@
           <span class="eyebrow">Vous souhaitez nous écrire ?</span>
           <h2>Envoyez-nous un message</h2>
           <form class="form-card" action="#" method="post">
+            <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true">
+              <label for="cWeb">Ne pas remplir ce champ</label>
+              <input type="text" id="cWeb" name="site_web" tabindex="-1" autocomplete="off">
+            </div>
             <div class="form-grid">
               <div class="full"><label for="cSociete">Société</label><input type="text" id="cSociete" name="societe"></div>
               <div><label for="cNom">Nom Prénom</label><input type="text" id="cNom" name="nom" required></div>
@@ -143,7 +147,7 @@
       </div>
       <div class="footer__col">
         <h4>Légal</h4>
-        <ul><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="politique-confidentialite.html">Confidentialité</a></li><li><button type="button" class="footer__cookie-link" id="cookieManage">Gérer les cookies</button></li></ul>
+        <ul><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="politique-confidentialite.html">Confidentialité</a></li><li><a href="cgv.html">CGV</a></li><li><button type="button" class="footer__cookie-link" id="cookieManage">Gérer les cookies</button></li></ul>
       </div>
     </div>
     <div class="footer__inner">
