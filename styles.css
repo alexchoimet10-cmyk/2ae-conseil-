@@ -185,6 +185,11 @@ textarea { resize: vertical; min-height: 110px; }
 .article-card__link { font-size: 13px; font-weight: 700; color: var(--red); }
 .article-card--featured { grid-column: span 2; }
 
+/* ---------- ARTICLE HERO ICON (remplace les images hotlinkées cassées) ---------- */
+.article-hero-visual { display: flex; align-items: center; justify-content: center; height: 220px; border-radius: var(--radius); margin: 24px 0; position: relative; overflow: hidden; background: linear-gradient(135deg, var(--red-light) 0%, #F5E3E0 100%); }
+.article-hero-visual::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle, var(--red) 1px, transparent 1px); background-size: 20px 20px; opacity: .12; }
+.article-hero-visual svg { position: relative; width: 88px; height: 88px; stroke: var(--red); }
+
 /* ---------- GUIDES ---------- */
 .filter-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
 .filter-pill { display: inline-flex; align-items: center; border: 1.5px solid var(--line); background: var(--white); color: var(--ink); font-size: 13.5px; font-weight: 600; padding: 9px 18px; border-radius: 999px; cursor: pointer; transition: background .15s ease, color .15s ease, border-color .15s ease; }
