@@ -114,11 +114,48 @@
   var contactForm = document.querySelector(".form-card");
   if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
       var trap = contactForm.querySelector('input[name="site_web"]');
       if (trap && trap.value) {
-        e.preventDefault();
         return false;
       }
+      var submitBtn = contactForm.querySelector('button[type="submit"]');
+      var originalBtnLabel = submitBtn ? submitBtn.textContent : "";
+      var existingMsg = contactForm.querySelector(".form-feedback-msg");
+      if (existingMsg) { existingMsg.remove(); }
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Envoi en cours...";
+      }
+      var formData = new FormData(contactForm);
+      fetch(contactForm.getAttribute("action"), {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: formData
+      })
+        .then(function (response) {
+          if (!response.ok) { throw new Error("network"); }
+          return response.json();
+        })
+        .then(function () {
+          contactForm.reset();
+          var msg = document.createElement("p");
+          msg.className = "form-feedback-msg form-feedback-msg--success";
+          msg.textContent = "Votre message a bien ete envoye. Nous vous repondrons rapidement.";
+          contactForm.appendChild(msg);
+        })
+        .catch(function () {
+          var msg = document.createElement("p");
+          msg.className = "form-feedback-msg form-feedback-msg--error";
+          msg.textContent = "Une erreur est survenue lors de l'envoi. Merci de reessayer ou de nous appeler directement.";
+          contactForm.appendChild(msg);
+        })
+        .finally(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnLabel;
+          }
+        });
     });
   }
 
