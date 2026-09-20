@@ -85,7 +85,7 @@
   // ID de mesure PROVISOIRE : à remplacer par le véritable identifiant GA4
   // du client une fois le nom de domaine définitif en place, puis à activer
   // en retirant la vérification "XXXXXXXXXX" ci-dessous.
-  var GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
+  var GA_MEASUREMENT_ID = "G-R3ZBMSRZTH";
   function loadAnalytics() {
     if (window.__gaLoaded || GA_MEASUREMENT_ID.indexOf("XXXXXXXXXX") !== -1) return;
     window.__gaLoaded = true;
