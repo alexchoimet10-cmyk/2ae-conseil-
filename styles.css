@@ -127,8 +127,8 @@ ul { padding-left: 1.2em; color: var(--grey); line-height: 1.7; }
 /* ---------- TEAM ---------- */
 .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
 .team-card { text-align: center; }
-.team-card__photo { width: 100%; aspect-ratio: 1; border-radius: var(--radius); overflow: hidden; background: var(--grey-light); margin-bottom: 14px; }
-.team-card__photo img { width: 100%; height: 100%; object-fit: cover; }
+.team-card__photo { position: relative; width: 100%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: var(--grey-light); margin-bottom: 14px; }
+.team-card__photo img { position: absolute; max-width: none; }
 .team-card h4 { font-size: 15.5px; margin-bottom: 2px; }
 .team-card .role { font-size: 12.5px; color: var(--red); font-weight: 600; }
 
