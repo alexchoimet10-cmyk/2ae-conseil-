@@ -179,11 +179,17 @@ textarea { resize: vertical; min-height: 110px; }
 .article-card--featured .article-card__media--icon svg { width: 68px; height: 68px; }
 .article-card__body { padding: 20px; }
 .article-tag { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--red); background: var(--red-light); padding: 4px 10px; border-radius: 999px; margin-bottom: 10px; }
-.article-card__date { font-size: 12px; color: var(--grey); margin-bottom: 6px; }
+.article-card__date { display: flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 700; color: var(--ink, #1a1a1a); margin-bottom: 10px; }
+.article-card__new { display: inline-block; font-size: 10px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; background: var(--red); color: #fff; padding: 3px 8px; border-radius: 999px; }
 .article-card h3 { font-size: 16.5px; margin-bottom: 8px; }
 .article-card p { font-size: 13.5px; }
 .article-card__link { font-size: 13px; font-weight: 700; color: var(--red); }
 .article-card--featured { grid-column: span 2; }
+
+.actu-freshness { display: flex; align-items: center; gap: 10px; width: fit-content; max-width: 100%; background: var(--red-light); border: 1px solid rgba(184,50,50,.15); border-radius: 999px; padding: 10px 18px; margin: 0 0 28px; font-size: 13.5px; font-weight: 600; color: var(--red); }
+.actu-freshness__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--red); flex-shrink: 0; animation: actuPulse 2s ease-in-out infinite; }
+@keyframes actuPulse { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
+@media (max-width: 560px) { .actu-freshness { font-size: 12.5px; padding: 9px 14px; } }
 
 /* ---------- GUIDES ---------- */
 .filter-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
