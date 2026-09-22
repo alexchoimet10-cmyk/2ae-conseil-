@@ -250,3 +250,10 @@ textarea { resize: vertical; min-height: 110px; }
   }
   .nav__links.is-open { opacity: 1; transform: translateY(0); pointer-events: auto; }
 }
+
+@media (max-width: 420px) {
+  /* Le badge + "2AE Conseil" + bouton "Nous contacter" + burger sont trop serrés sous ~420px : le bouton passait sur deux lignes. */
+  .logo > span:not(.logo__badge) { display: none; }
+  .nav__actions { gap: 10px; }
+  .nav__actions .btn--sm { padding: 9px 16px; white-space: nowrap; }
+}
