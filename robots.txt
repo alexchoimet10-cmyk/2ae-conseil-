@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alexchoimet10-cmyk.github.io/2ae-conseil-/sitemap.xml
