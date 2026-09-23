@@ -1,0 +1,95 @@
+{
+  "_comment": "Banque de sujets pre-verifies (faits reels, verifies par recherche web le 22-23/09/2026) pour l'automatisation n8n de la page Actualites 2ae-conseil. Le workflow choisit le premier sujet dont l'id n'est PAS dans state.json.usedIds (voir state.json), construit l'article a partir du champ body tel quel (l'IA peut reformuler legerement le style mais ne doit RIEN inventer de factuel), choisit une image dans images.json selon 'category', puis ajoute l'id a usedIds. Si tous les sujets sont deja dans usedIds, ne rien publier (garder le site tel quel) jusqu'a ce que cette banque soit completee manuellement.",
+  "topics": [
+    {
+      "id": "facturation-electronique-reception",
+      "category": "fiscal",
+      "tag": "Fiscal",
+      "date_label": "Depuis le 1er septembre 2026",
+      "title": "Facturation électronique : la réception devient obligatoire pour toutes les entreprises",
+      "body": "Depuis le 1er septembre 2026, toute entreprise assujettie à la TVA doit être en mesure de recevoir ses factures fournisseurs au format électronique, quelle que soit sa taille. Cette réception doit transiter par une plateforme agréée par l'administration — votre propre outil de facturation ne suffit plus s'il n'est pas raccordé. Pour les TPE-PME qui n'ont pas encore choisi de plateforme, le risque immédiat n'est pas la sanction mais la désorganisation : factures manquantes, retards de rapprochement comptable, relances fournisseurs inutiles. Nos équipes accompagnent actuellement nos clients dans le raccordement et la vérification de leur circuit de facturation.",
+      "cta_sujet": "gestion"
+    },
+    {
+      "id": "franchise-tva-seuils-2026",
+      "category": "fiscal",
+      "tag": "Fiscal",
+      "date_label": "Confirmé pour 2026",
+      "title": "Franchise en base de TVA : les seuils actuels sont maintenus",
+      "body": "Alors qu'un abaissement des seuils de franchise en base de TVA avait été envisagé, le gouvernement a tranché : les seuils restent fixés à 85 000 € pour les activités de vente et d'hébergement, et 37 500 € pour les prestations de services et professions libérales. Les entreprises qui approchent de ces plafonds disposent donc d'un répit, mais restent tenues de surveiller leur chiffre d'affaires cumulé sur l'année en cours et l'année précédente : un dépassement fait basculer l'entreprise dans le régime réel de TVA dès le mois suivant. Un point de vigilance à ne pas relâcher malgré cette stabilité retrouvée.",
+      "cta_sujet": "gestion"
+    },
+    {
+      "id": "smic-revalorisation-octobre-2026",
+      "category": "social",
+      "tag": "Social",
+      "date_label": "Applicable au 1er octobre 2026",
+      "title": "SMIC : une revalorisation à anticiper dès la paie d'octobre",
+      "body": "Une revalorisation du SMIC horaire est attendue au 1er octobre 2026. Au-delà de son effet direct sur les salaires au minimum légal, cette hausse déclenche souvent un effet domino : réexamen des grilles conventionnelles, des primes indexées sur le SMIC, et des allègements de cotisations patronales sur les bas salaires, qui se resserrent mécaniquement quand le SMIC augmente. Les employeurs ont intérêt à faire vérifier leur paramétrage de paie avant l'échéance plutôt qu'à régulariser après coup : un rappel de salaire ou un ajustement tardif de charges coûte toujours plus cher qu'une anticipation.",
+      "cta_sujet": "rh"
+    },
+    {
+      "id": "epargne-salariale-plfss-2027",
+      "category": "pilotage",
+      "tag": "Pilotage",
+      "date_label": "Travaux en cours — PLFSS 2027",
+      "title": "Épargne salariale : un possible assujettissement à cotisations à surveiller",
+      "body": "Les travaux préparatoires du prochain budget de la Sécurité sociale évoquent un assujettissement partiel à cotisations sociales de l'épargne salariale — intéressement, participation, abondement — au-delà d'un certain montant annuel par salarié. Rien n'est encore arbitré à ce stade, mais les entreprises qui utilisent ces dispositifs pour fidéliser leurs équipes ont intérêt à suivre ce dossier de près : un changement de règles en cours d'année modifierait directement le coût réel de ces avantages pour l'employeur. Nous suivons ce texte et reviendrons vers nos clients concernés dès qu'une version stabilisée sera connue.",
+      "cta_sujet": "pilotage"
+    },
+    {
+      "id": "carburant-employeur-plafond-1000",
+      "category": "social",
+      "tag": "Social",
+      "date_label": "Applicable d'octobre à décembre 2026",
+      "title": "Indemnité carburant employeur : le plafond exonéré porté à 1 000 € pour le dernier trimestre",
+      "body": "Le gouvernement a annoncé la reconduction, pour la période d'octobre à décembre 2026, du dispositif de soutien aux salariés qui parcourent de longues distances pour se rendre au travail : les employeurs qui le souhaitent peuvent verser une prime carburant exonérée de cotisations sociales et d'impôt sur le revenu, dans la limite portée à titre exceptionnel à 1 000 € par an et par salarié. Ce relèvement vise à compenser le coût des déplacements domicile-travail pour les salariés sans alternative aux transports individuels. Le dispositif reste facultatif pour l'employeur et se cumule difficilement avec les autres avantages existants (prime de transport, forfait mobilités durables) au-delà des plafonds propres à chacun. Les entreprises qui envisagent de verser cette prime ont intérêt à vérifier dès maintenant l'éligibilité de leurs salariés et à formaliser leur politique interne avant la fin d'année.",
+      "cta_sujet": "rh"
+    },
+    {
+      "id": "acre-reforme-2026",
+      "category": "creation",
+      "tag": "Création",
+      "date_label": "Depuis le 1er juillet 2026",
+      "title": "ACRE : l'exonération de charges pour les créateurs d'entreprise passe de 50 % à 25 %",
+      "body": "Le régime de l'ACRE a été resserré par la loi de financement de la Sécurité sociale pour 2026. Pour les micro-entreprises créées ou reprises depuis le 1er juillet 2026, le taux d'exonération de cotisations sociales sur les premiers mois d'activité passe de 50 % à 25 %. Autre changement important : le bénéfice de l'ACRE n'est plus automatique depuis le 1er janvier 2026, il est désormais réservé à certains publics (demandeurs d'emploi, bénéficiaires du RSA ou de l'ASS, jeunes de 18 à 25 ans, créateurs en quartier prioritaire...) et doit faire l'objet d'une demande explicite auprès de l'Urssaf dans les 60 jours suivant la déclaration d'activité. Les porteurs de projet qui comptaient sur cette aide pour amortir leurs premiers mois ont intérêt à vérifier leur éligibilité avant de se lancer, plutôt que de la considérer comme acquise.",
+      "cta_sujet": "creation"
+    },
+    {
+      "id": "retards-paiement-fournisseurs-2026",
+      "category": "tresorerie",
+      "tag": "Trésorerie",
+      "date_label": "Constat 2026",
+      "title": "Retards de paiement fournisseurs : un niveau record qui pèse sur la trésorerie des PME",
+      "body": "Le retard moyen de paiement entre entreprises atteint 18,9 jours en 2026, son plus haut niveau depuis douze ans, contre 17,3 jours un an plus tôt. Plus de la moitié des entreprises règlent désormais leurs fournisseurs hors des délais légaux, alors même que la loi LME fixe un plafond de 60 jours à compter de la date de facture (ou 45 jours fin de mois). Les contrôles de la DGCCRF se renforcent en parallèle, avec une publication plus systématique des entreprises sanctionnées. Pour une PME qui subit ces retards côté clients tout en devant respecter ses propres délais fournisseurs, l'écart de trésorerie généré peut devenir critique : des solutions court terme existent (affacturage, découvert autorisé négocié, escompte) pour lisser ce décalage plutôt que de le subir mois après mois.",
+      "cta_sujet": "gestion"
+    },
+    {
+      "id": "index-egalite-professionnelle-2026",
+      "category": "social",
+      "tag": "Social",
+      "date_label": "Avant le 1er mars 2026",
+      "title": "Index de l'égalité professionnelle : la publication reste obligatoire avant le 1er mars",
+      "body": "Les entreprises d'au moins 50 salariés doivent calculer et publier leur index de l'égalité professionnelle entre femmes et hommes au titre de l'année 2025, au plus tard le 1er mars 2026, via la plateforme Egapro du ministère du Travail. Le score, noté sur 100 points à partir de quatre indicateurs (cinq au-delà de 250 salariés), doit être affiché de manière visible sur le site internet de l'entreprise. En dessous de 75 points, des mesures correctives deviennent obligatoires ; en dessous de 85, des objectifs de progression doivent être définis et publiés. L'absence de publication expose à une pénalité pouvant atteindre 1 % de la masse salariale annuelle. Un chantier à anticiper dès maintenant plutôt qu'à traiter dans l'urgence de février.",
+      "cta_sujet": "rh"
+    },
+    {
+      "id": "cfe-solde-decembre",
+      "category": "fiscal",
+      "tag": "Fiscal",
+      "date_label": "Avant le 15 décembre",
+      "title": "CFE : le solde de cotisation foncière des entreprises est dû avant le 15 décembre",
+      "body": "Le solde de la cotisation foncière des entreprises (CFE) doit être réglé au plus tard le 15 décembre, sous forme dématérialisée obligatoire (prélèvement ou paiement en ligne depuis l'espace professionnel sur impots.gouv.fr). Les entreprises dont la CFE de l'année précédente atteignait ou dépassait 3 000 € ont dû verser un acompte de 50 % dès le 15 juin ; le solde restant est donc généralement plus faible que le montant total dû. Un avis de CFE reçu tardivement ou une adresse professionnelle mal mise à jour restent des causes fréquentes de retard de paiement, avec les majorations qui en découlent. Vérifier son espace professionnel en amont de l'échéance permet d'éviter une régularisation de dernière minute.",
+      "cta_sujet": "gestion"
+    },
+    {
+      "id": "duerp-mise-a-jour-2026",
+      "category": "social",
+      "tag": "Social",
+      "date_label": "Obligation permanente",
+      "title": "DUERP : une obligation trop souvent négligée, avec des sanctions bien réelles",
+      "body": "Le document unique d'évaluation des risques professionnels (DUERP) est obligatoire dès l'embauche du premier salarié, quelle que soit la taille de l'entreprise. Il doit être mis à jour régulièrement — au minimum une fois par an dans les entreprises de 11 salariés et plus — et à chaque événement modifiant l'exposition des salariés aux risques. Son absence expose l'employeur à une amende de 1 500 €, portée à 3 000 € en cas de récidive, sans compter le risque accru en cas d'accident du travail où l'absence de DUERP à jour peut aggraver la responsabilité de l'employeur. La tendance de fond va vers un dépôt dématérialisé sur un portail dédié, déployé progressivement selon la taille des entreprises. Pour une PME, prévoir une à trois semaines pour mener ou actualiser cette évaluation reste une estimation raisonnable.",
+      "cta_sujet": "rh"
+    }
+  ]
+}

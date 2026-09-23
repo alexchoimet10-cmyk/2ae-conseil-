@@ -1,0 +1,12 @@
+{
+  "_comment": "Etat de l'automatisation n8n Actualites 2ae-conseil. usedIds = sujets de topics.json deja publies (a ne pas repiocher). n8n met a jour ce fichier (commit sur GitHub) apres chaque publication reussie. Si aucun sujet non-utilise n'est disponible dans topics.json, le workflow ne doit RIEN publier et laisser le site tel quel jusqu'a completion manuelle de la banque.",
+  "usedIds": [
+    "facturation-electronique-reception",
+    "franchise-tva-seuils-2026",
+    "smic-revalorisation-octobre-2026",
+    "epargne-salariale-plfss-2027",
+    "carburant-employeur-plafond-1000"
+  ],
+  "lastPublishedTopicId": "carburant-employeur-plafond-1000",
+  "lastPublishedAt": "2026-09-23"
+}
