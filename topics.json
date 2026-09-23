@@ -90,6 +90,42 @@
       "title": "DUERP : une obligation trop souvent négligée, avec des sanctions bien réelles",
       "body": "Le document unique d'évaluation des risques professionnels (DUERP) est obligatoire dès l'embauche du premier salarié, quelle que soit la taille de l'entreprise. Il doit être mis à jour régulièrement — au minimum une fois par an dans les entreprises de 11 salariés et plus — et à chaque événement modifiant l'exposition des salariés aux risques. Son absence expose l'employeur à une amende de 1 500 €, portée à 3 000 € en cas de récidive, sans compter le risque accru en cas d'accident du travail où l'absence de DUERP à jour peut aggraver la responsabilité de l'employeur. La tendance de fond va vers un dépôt dématérialisé sur un portail dédié, déployé progressivement selon la taille des entreprises. Pour une PME, prévoir une à trois semaines pour mener ou actualiser cette évaluation reste une estimation raisonnable.",
       "cta_sujet": "rh"
+    },
+    {
+      "id": "facturation-electronique-emission-2027",
+      "category": "fiscal",
+      "tag": "Fiscal",
+      "date_label": "Applicable au 1er septembre 2027",
+      "title": "Facturation électronique : l'obligation d'émission arrive pour les TPE et PME en 2027",
+      "body": "Après l'obligation de réception, entrée en vigueur le 1er septembre 2026 pour toutes les entreprises, la réforme de la facturation électronique franchit une nouvelle étape : à compter du 1er septembre 2027, les TPE, PME et micro-entreprises devront à leur tour émettre leurs factures B2B au format électronique structuré (Factur-X, UBL ou CII), via une plateforme agréée par l'administration. Contrairement à la réception, qui peut se limiter à un raccordement minimal, l'émission implique de revoir son circuit de facturation dans son ensemble : choix de la plateforme, format des données, articulation avec l'outil de gestion existant. Un an peut sembler long, mais les créneaux d'accompagnement des éditeurs et cabinets se resserrent à mesure que l'échéance approche : mieux vaut lancer ce chantier dès maintenant plutôt que dans les derniers mois.",
+      "cta_sujet": "gestion"
+    },
+    {
+      "id": "ruptures-conventionnelles-duree-indemnisation-2026",
+      "category": "social",
+      "tag": "Social",
+      "date_label": "Depuis le 1er septembre 2026",
+      "title": "Ruptures conventionnelles : la durée maximale d'indemnisation chômage réduite",
+      "body": "Depuis le 1er septembre 2026, la durée maximale d'indemnisation chômage ouverte après une rupture conventionnelle a été réduite : elle passe à 15 mois pour les salariés de moins de 55 ans et à 20,5 mois pour les 55 ans et plus, contre des durées plus longues auparavant. Cette évolution ne change rien aux règles de validation de la rupture elle-même (indemnité spécifique, délai de rétractation, homologation par la Dreets), mais elle modifie la donne pour le salarié qui négocie son départ, et donc indirectement pour l'employeur : les arbitrages sur le montant de l'indemnité transactionnelle ou sur le calendrier de départ peuvent s'en trouver affectés. Les entreprises qui envisagent une ou plusieurs ruptures conventionnelles dans les prochains mois ont intérêt à intégrer ce nouveau paramètre dans leurs discussions.",
+      "cta_sujet": "rh"
+    },
+    {
+      "id": "plafonds-micro-entreprise-2026-2028",
+      "category": "creation",
+      "tag": "Création",
+      "date_label": "Applicable jusqu'en 2028",
+      "title": "Micro-entreprise : les nouveaux plafonds de chiffre d'affaires fixés jusqu'en 2028",
+      "body": "Les plafonds de chiffre d'affaires du régime micro-entreprise ont été actualisés pour la période 2026-2028 : 203 100 € pour les activités de vente de marchandises et d'hébergement, 83 600 € pour les prestations de services relevant des BIC ou des BNC. Ces seuils, révisés tous les trois ans, resteront donc stables jusqu'en 2028, sauf nouvelle réforme entre-temps. Autre évolution à noter : le taux de cotisations du régime micro-social pour les prestations de services en BNC passe de 24,6 % à 25,6 %, une hausse plafonnée par rapport au projet initial. Les créateurs et créatrices dont l'activité approche de ces plafonds ont intérêt à anticiper le passage au régime réel — changement de statut, TVA, comptabilité — plutôt que de le découvrir en cours d'année.",
+      "cta_sujet": "creation"
+    },
+    {
+      "id": "credits-tresorerie-acces-2026",
+      "category": "tresorerie",
+      "tag": "Trésorerie",
+      "date_label": "Constat 2026",
+      "title": "Crédits de trésorerie : des taux en baisse mais un accès qui reste resserré",
+      "body": "Le taux moyen des prêts professionnels accordés aux PME s'est nettement détendu en 2026, autour de 3,5 % contre plus de 4 % fin 2024. Mais cette baisse des taux ne s'accompagne pas d'un assouplissement généralisé de l'accès au crédit : les encours de crédits de trésorerie reculent d'environ 6 % sur un an, les banques restant plus sélectives sur ce type de financement que sur les crédits d'investissement. Concrètement, une PME en bonne santé financière profite pleinement de la baisse des taux, mais une entreprise en tension de trésorerie peut rencontrer plus de difficultés à obtenir une ligne court terme qu'à financer un investissement. D'où l'intérêt de solliciter son financement de trésorerie en amont, avant que le besoin ne devienne urgent, plutôt qu'au moment où la marge de négociation est la plus faible.",
+      "cta_sujet": "gestion"
     }
   ]
 }
