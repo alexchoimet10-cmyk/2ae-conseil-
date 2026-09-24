@@ -16,6 +16,40 @@
     document.head.appendChild(favicon);
   }
 
+  // ---- Portails clients (menu "Connexion") ----
+  // Liens externes vers les portails deja utilises par les clients de 2AE
+  // (Mon Expert en Gestion, Paie-Silae, Bibliotheque doc, Ami Compta).
+  // Aucun document, mot de passe ou donnee client ne transite par ce site :
+  // ce sont de simples liens vers ces services tiers, comme sur l'ancien site.
+  // Injecte en JS pour apparaitre automatiquement sur toutes les pages.
+  var navActions = document.querySelector(".nav__actions");
+  if (navActions) {
+    var loginWrap = document.createElement("div");
+    loginWrap.className = "nav__login";
+    loginWrap.innerHTML =
+      '<button type="button" class="nav__login-btn" id="navLoginBtn" aria-haspopup="true" aria-expanded="false">Connexion</button>' +
+      '<div class="nav__login-menu" id="navLoginMenu">' +
+        '<a href="https://2aeconseil.mon-expert-en-gestion.fr/cas/login?service=https://2aeconseil.mon-expert-en-gestion.fr/portail/" target="_blank" rel="noopener">Mon Expert en Gestion</a>' +
+        '<a href="https://www.silaexpert05.fr/silae" target="_blank" rel="noopener">Paie – Silae</a>' +
+        '<a href="https://provider.mycompanyfiles.fr/Home/Index/1400" target="_blank" rel="noopener">Bibliothèque doc</a>' +
+        '<a href="https://ami-compta.fr/#/home" target="_blank" rel="noopener">Dépôt – Ami Compta</a>' +
+      "</div>";
+    navActions.insertBefore(loginWrap, navActions.firstChild);
+
+    var navLoginBtn = document.getElementById("navLoginBtn");
+    navLoginBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var isOpen = loginWrap.classList.toggle("is-open");
+      navLoginBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+    document.addEventListener("click", function (e) {
+      if (!loginWrap.contains(e.target)) {
+        loginWrap.classList.remove("is-open");
+        navLoginBtn.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
   // Burger mobile nav
   var burger = document.getElementById("burger");
   var navLinks = document.getElementById("navLinks");
