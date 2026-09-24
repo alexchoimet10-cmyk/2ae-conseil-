@@ -108,12 +108,19 @@
     if (cookieManage) cookieManage.addEventListener("click", function () { cookieBanner.hidden = false; });
   }
 
-  // ---- Anti-spam (honeypot) sur le formulaire de contact ----
-  // Champ invisible que seuls les robots remplissent : si rempli, on bloque
-  // silencieusement l'envoi. Nommé "_honey" (convention reconnue par
-  // FormSubmit) pour qu'il soit automatiquement exclu de l'email recu.
+  // ---- Formulaire de contact (EmailJS) ----
+  // Anti-spam (honeypot) : champ invisible que seuls les robots remplissent ;
+  // si rempli, on bloque silencieusement l'envoi.
+  // EmailJS envoie un email avec un design HTML personnalise (couleurs 2AE)
+  // au lieu d'un email brut genere par un service tiers.
+  var EMAILJS_PUBLIC_KEY = "MRGly1cMdJK9tsrH0";
+  var EMAILJS_SERVICE_ID = "service_5vcbgjq";
+  var EMAILJS_TEMPLATE_ID = "wmdwaab";
+
   var contactForm = document.querySelector(".form-card");
-  if (contactForm) {
+  if (contactForm && window.emailjs) {
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
       var trap = contactForm.querySelector('input[name="_honey"]');
@@ -128,29 +135,31 @@
         submitBtn.disabled = true;
         submitBtn.textContent = "Envoi en cours...";
       }
-      var formData = new FormData(contactForm);
 
-      // Envoie le libelle lisible du sujet (ex: "Ressources humaines") plutot
-      // que la valeur technique de l'option (ex: "rh"), pour un email plus clair.
-      var subjectSelectEl = contactForm.querySelector("#contactSubject");
-      if (subjectSelectEl && subjectSelectEl.selectedOptions && subjectSelectEl.selectedOptions[0]) {
-        formData.set("Sujet", subjectSelectEl.selectedOptions[0].textContent);
+      function fieldVal(name) {
+        var el = contactForm.querySelector('[name="' + name + '"]');
+        return el ? el.value.trim() : "";
       }
 
-      // Objet d'email : simple et direct, avec le nom de l'expediteur pour
-      // un tri rapide dans la boite mail du cabinet.
-      var nomVal = (formData.get("Nom") || "").toString().trim();
-      formData.set("_subject", nomVal ? ("Nouveau message de " + nomVal) : "Nouveau message - site 2AE Conseil");
+      // Libelle lisible du sujet (ex: "Ressources humaines") plutot que la
+      // valeur technique de l'option (ex: "rh"), pour un email plus clair.
+      var subjectSelectEl = contactForm.querySelector("#contactSubject");
+      var sujetLabel = (subjectSelectEl && subjectSelectEl.selectedOptions && subjectSelectEl.selectedOptions[0])
+        ? subjectSelectEl.selectedOptions[0].textContent
+        : "";
 
-      fetch(contactForm.getAttribute("action"), {
-        method: "POST",
-        headers: { "Accept": "application/json" },
-        body: formData
-      })
-        .then(function (response) {
-          if (!response.ok) { throw new Error("network"); }
-          return response.json();
-        })
+      var societeVal = fieldVal("Société");
+
+      var params = {
+        nom: fieldVal("Nom") || "un visiteur du site",
+        societe: societeVal ? ("(" + societeVal + ")") : "",
+        email: fieldVal("Email"),
+        telephone: fieldVal("Téléphone") || "Non renseigne",
+        sujet: sujetLabel || "Non precise",
+        message: fieldVal("Message")
+      };
+
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params)
         .then(function () {
           contactForm.reset();
           var msg = document.createElement("p");

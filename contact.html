@@ -64,13 +64,10 @@
         <div>
           <span class="eyebrow">Vous souhaitez nous écrire ?</span>
           <h2>Envoyez-nous un message</h2>
-          <!-- TEST TEMPORAIRE : action pointee vers alexchoimet10@gmail.com le temps de verifier
-               que l'activation formsubmit.co fonctionne, avant de repointer vers contact@2aeconseil.fr
+          <!-- TEST TEMPORAIRE : emails envoyes vers alexchoimet10@gmail.com (via EmailJS) le temps
+               des tests, avant de repointer le "To Email" du template EmailJS vers contact@2aeconseil.fr
                pour ne pas deranger le cabinet avec des emails de test. A REVERTIR avant le lancement reel. -->
-          <form class="form-card" action="https://formsubmit.co/ajax/alexchoimet10@gmail.com" method="post">
-              <input type="hidden" name="_subject" value="Nouveau message - Site 2AE Conseil">
-              <input type="hidden" name="_template" value="table">
-              <input type="hidden" name="_captcha" value="false">
+          <form class="form-card" action="#" method="post">
             <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true">
               <label for="cWeb">Ne pas remplir ce champ</label>
               <input type="text" id="cWeb" name="_honey" tabindex="-1" autocomplete="off">
@@ -167,6 +164,7 @@
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
