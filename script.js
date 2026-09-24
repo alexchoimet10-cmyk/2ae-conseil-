@@ -1,12 +1,12 @@
 (function () {
   "use strict";
 
-  // Année footer
+  // Annee footer
   var yearEls = document.querySelectorAll("#year");
   yearEls.forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
   // ---- Favicon ----
-  // Injecté en JS pour garantir sa présence sur toutes les pages sans dupliquer
+  // Injecte en JS pour garantir sa presence sur toutes les pages sans dupliquer
   // la balise <link> dans chacune d'elles.
   if (!document.querySelector('link[rel="icon"]')) {
     var favicon = document.createElement("link");
@@ -31,8 +31,8 @@
       '<div class="nav__login-menu" id="navLoginMenu">' +
         '<a href="https://2aeconseil.mon-expert-en-gestion.fr/cas/login?service=https://2aeconseil.mon-expert-en-gestion.fr/portail/" target="_blank" rel="noopener">Mon Expert en Gestion</a>' +
         '<a href="https://www.silaexpert05.fr/silae" target="_blank" rel="noopener">Paie – Silae</a>' +
-        '<a href="https://provider.mycompanyfiles.fr/Home/Index/1400" target="_blank" rel="noopener">Bibliothèque doc</a>' +
-        '<a href="https://ami-compta.fr/#/home" target="_blank" rel="noopener">Dépôt – Ami Compta</a>' +
+        '<a href="https://provider.mycompanyfiles.fr/Home/Index/1400" target="_blank" rel="noopener">Bibliotheque doc</a>' +
+        '<a href="https://ami-compta.fr/#/home" target="_blank" rel="noopener">Depot – Ami Compta</a>' +
       "</div>";
     navActions.insertBefore(loginWrap, navActions.firstChild);
 
@@ -60,7 +60,7 @@
     });
   }
 
-  // ---- Onglets génériques (accompagnements / secteurs) ----
+  // ---- Onglets generiques (accompagnements / secteurs) ----
   // Structure attendue : [data-tabs] contient des boutons [data-tab-btn="id"]
   // et des panneaux [data-tab-panel="id"]
   document.querySelectorAll("[data-tabs]").forEach(function (group) {
@@ -84,7 +84,7 @@
     if (hashBtn) hashBtn.scrollIntoView({ block: "start", behavior: "instant" });
   });
 
-  // ---- Filtres par catégorie (page Guides) ----
+  // ---- Filtres par categorie (page Guides) ----
   // Structure attendue : [data-filter-group] contient des boutons [data-filter-btn="cat"]
   // et des cartes [data-filter-item][data-category="cat"]
   document.querySelectorAll("[data-filter-group]").forEach(function (group) {
@@ -115,10 +115,10 @@
   }
 
   // ---- Mesure d'audience (Google Analytics 4) ----
-  // Chargée uniquement si l'utilisateur a accepté les cookies (RGPD).
-  // ID de mesure PROVISOIRE : à remplacer par le véritable identifiant GA4
-  // du client une fois le nom de domaine définitif en place, puis à activer
-  // en retirant la vérification "XXXXXXXXXX" ci-dessous.
+  // Chargee uniquement si l'utilisateur a accepte les cookies (RGPD).
+  // ID de mesure PROVISOIRE : a remplacer par le veritable identifiant GA4
+  // du client une fois le nom de domaine definitif en place, puis a activer
+  // en retirant la verification "XXXXXXXXXX" ci-dessous.
   var GA_MEASUREMENT_ID = "G-R3ZBMSRZTH";
   function loadAnalytics() {
     if (window.__gaLoaded || GA_MEASUREMENT_ID.indexOf("XXXXXXXXXX") !== -1) return;
@@ -150,6 +150,9 @@
   var EMAILJS_PUBLIC_KEY = "MRGIy1cMdJK9tsrH0";
   var EMAILJS_SERVICE_ID = "service_5vcbgjq";
   var EMAILJS_TEMPLATE_ID = "template_rqzy4ix";
+  // Second template : accuse de reception envoye au visiteur lui-meme
+  // (confirmation + delai de reponse + recap de sa demande).
+  var EMAILJS_AUTOREPLY_TEMPLATE_ID = "template_iomlfzj";
 
   var contactForm = document.querySelector(".form-card");
   if (contactForm && window.emailjs) {
@@ -200,6 +203,13 @@
           msg.className = "form-feedback-msg form-feedback-msg--success";
           msg.textContent = "Votre message a bien ete envoye. Nous vous repondrons rapidement.";
           contactForm.appendChild(msg);
+
+          // Envoi de l'accuse de reception au visiteur (best-effort : si ca
+          // echoue, on ne bloque pas le message de succes ci-dessus, le
+          // message principal au cabinet est deja parti).
+          if (params.email) {
+            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_AUTOREPLY_TEMPLATE_ID, params).catch(function () {});
+          }
         })
         .catch(function () {
           var msg = document.createElement("p");
@@ -216,7 +226,7 @@
     });
   }
 
-  // ---- Présélection du sujet sur le formulaire de contact via ?sujet= ----
+  // ---- Preselection du sujet sur le formulaire de contact via ?sujet= ----
   var subjectSelect = document.getElementById("contactSubject");
   if (subjectSelect) {
     var params = new URLSearchParams(window.location.search);
@@ -227,14 +237,14 @@
     }
   }
 
-  // ---- Téléchargement des guides PDF (page Guides) ----
-  // Les PDF sont stockés encodés en base64 (guides/<nom>.b64) pour rester de simples
-  // fichiers texte sur GitHub Pages. On les récupère, on les décode, puis on déclenche
-  // le téléchargement via un Blob.
+  // ---- Telechargement des guides PDF (page Guides) ----
+  // Les PDF sont stockes encodes en base64 (guides/<nom>.b64) pour rester de simples
+  // fichiers texte sur GitHub Pages. On les recupere, on les decode, puis on declenche
+  // le telechargement via un Blob.
   window.downloadGuide = function (el, filename) {
     var base = filename.replace(/\.pdf$/i, "");
     var originalText = el ? el.textContent : "";
-    if (el) el.textContent = "Préparation du téléchargement…";
+    if (el) el.textContent = "Preparation du telechargement…";
     fetch("guides/" + base + ".b64")
       .then(function (r) {
         if (!r.ok) throw new Error("fetch failed");
@@ -257,7 +267,7 @@
         setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
       })
       .catch(function () {
-        alert("Le téléchargement a échoué. Merci de réessayer ou de nous contacter.");
+        alert("Le telechargement a echoue. Merci de reessayer ou de nous contacter.");
       })
       .then(function () {
         if (el) el.textContent = originalText;
