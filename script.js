@@ -110,12 +110,13 @@
 
   // ---- Anti-spam (honeypot) sur le formulaire de contact ----
   // Champ invisible que seuls les robots remplissent : si rempli, on bloque
-  // silencieusement l'envoi.
+  // silencieusement l'envoi. Nommé "_honey" (convention reconnue par
+  // FormSubmit) pour qu'il soit automatiquement exclu de l'email recu.
   var contactForm = document.querySelector(".form-card");
   if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
-      var trap = contactForm.querySelector('input[name="site_web"]');
+      var trap = contactForm.querySelector('input[name="_honey"]');
       if (trap && trap.value) {
         return false;
       }
@@ -128,6 +129,19 @@
         submitBtn.textContent = "Envoi en cours...";
       }
       var formData = new FormData(contactForm);
+
+      // Envoie le libelle lisible du sujet (ex: "Ressources humaines") plutot
+      // que la valeur technique de l'option (ex: "rh"), pour un email plus clair.
+      var subjectSelectEl = contactForm.querySelector("#contactSubject");
+      if (subjectSelectEl && subjectSelectEl.selectedOptions && subjectSelectEl.selectedOptions[0]) {
+        formData.set("Sujet", subjectSelectEl.selectedOptions[0].textContent);
+      }
+
+      // Objet d'email : simple et direct, avec le nom de l'expediteur pour
+      // un tri rapide dans la boite mail du cabinet.
+      var nomVal = (formData.get("Nom") || "").toString().trim();
+      formData.set("_subject", nomVal ? ("Nouveau message de " + nomVal) : "Nouveau message - site 2AE Conseil");
+
       fetch(contactForm.getAttribute("action"), {
         method: "POST",
         headers: { "Accept": "application/json" },
