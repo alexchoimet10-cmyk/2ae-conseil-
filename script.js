@@ -113,9 +113,9 @@
   // si rempli, on bloque silencieusement l'envoi.
   // EmailJS envoie un email avec un design HTML personnalise (couleurs 2AE)
   // au lieu d'un email brut genere par un service tiers.
-  var EMAILJS_PUBLIC_KEY = "MRGly1cMdJK9tsrH0";
+  var EMAILJS_PUBLIC_KEY = "MRGIy1cMdJK9tsrH0";
   var EMAILJS_SERVICE_ID = "service_5vcbgjq";
-  var EMAILJS_TEMPLATE_ID = "wmdwaab";
+  var EMAILJS_TEMPLATE_ID = "template_rqzy4ix";
 
   var contactForm = document.querySelector(".form-card");
   if (contactForm && window.emailjs) {
